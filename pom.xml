@@ -8,11 +8,11 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>pockemon</groupId>
+	<groupId>pokemon</groupId>
 	<artifactId>api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api</name>
-	<description>REST API using Java Spring Boot that exposes the information to the Pokedex:  https://pokeapi.co/</description>
+	<description>REST API using Java Spring Boot that exposes the information to the Pokedex: https://pokeapi.co/</description>
 	<properties>
 		<java.version>18</java.version>
 	</properties>

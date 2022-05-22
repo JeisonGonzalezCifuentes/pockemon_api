@@ -6,7 +6,7 @@ public class PokemonDetailDTO {
 	
 	private Integer id;
 	private String weight;
-	private Sprites sprites;
+	private SpritesDTO sprites;
 	private List<AbilityDTO> abilities;
 	private List<TypeDTO> types;
 	
@@ -14,7 +14,7 @@ public class PokemonDetailDTO {
 		super();
 	}
 	
-	public PokemonDetailDTO(Integer id, String weight, Sprites sprites, List<AbilityDTO> abilities, List<TypeDTO> types) {
+	public PokemonDetailDTO(Integer id, String weight, SpritesDTO sprites, List<AbilityDTO> abilities, List<TypeDTO> types) {
 		super();
 		this.weight = weight;
 		this.sprites = sprites;
@@ -30,7 +30,7 @@ public class PokemonDetailDTO {
 		return weight;
 	}
 	
-	public Sprites getSprites() {
+	public SpritesDTO getSprites() {
 		return sprites;
 	}
 	

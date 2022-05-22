@@ -1,17 +1,17 @@
 package pockemon.api.rest.dtos.pocke.api;
 
-public class Sprites {
+public class SpritesDTO {
 
 	private String back_default;
 	private String back_female;
 	private String front_default;
 	private String front_female;
 	
-	public Sprites() {
+	public SpritesDTO() {
 		super();
 	}
 
-	public Sprites(String back_default, String back_female, String front_default, String front_female) {
+	public SpritesDTO(String back_default, String back_female, String front_default, String front_female) {
 		super();
 		this.back_default = back_default;
 		this.back_female = back_female;

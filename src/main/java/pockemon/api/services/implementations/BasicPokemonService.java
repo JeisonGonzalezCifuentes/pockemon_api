@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -36,6 +37,7 @@ public class BasicPokemonService implements PokemonService {
 	@Autowired
 	private PokeClientService pokeClientService;
 
+	@Cacheable("pokemons")
 	@Override
 	public List<PokemonDTO> getAll(Optional<Integer> limitOptional, Optional<Integer> offsetOptional) {
 		try {

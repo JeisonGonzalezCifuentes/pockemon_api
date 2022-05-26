@@ -26,5 +26,10 @@ public class PokemonDetailDTO extends PokemonDTO {
 	public List<EvolutionDTO> getEvolutions() {
 		return evolutions;
 	}
+
+	@Override
+	public String toString() {
+		return "PokemonDetailDTO [description=" + description + ", evolutions=" + evolutions + "]";
+	}
 	
 }

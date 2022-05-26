@@ -1,21 +1,21 @@
-package pockemon.api.rest.dtos.pocke.api;
+package pockemon.api.rest.dtos.pocke.client;
 
 import java.util.List;
 
 public class GetAllDTO {
 	
-	private List<PokemonDTO> results;
+	private List<PokeClientDTO> results;
 	
 	public GetAllDTO() {
 		super();
 	}
 
-	public GetAllDTO(List<PokemonDTO> results) {
+	public GetAllDTO(List<PokeClientDTO> results) {
 		super();
 		this.results = results;
 	}
 
-	public List<PokemonDTO> getResults() {
+	public List<PokeClientDTO> getResults() {
 		return results;
 	}
 

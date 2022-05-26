@@ -1,4 +1,4 @@
-package pockemon.api.rest.dtos.pocke.api;
+package pockemon.api.rest.dtos.pocke.client;
 
 public class FieldNameDTO {
 
@@ -21,6 +21,11 @@ public class FieldNameDTO {
 	
 	public String getUrl() {
 		return url;
-	} 	
+	}
+
+	@Override
+	public String toString() {
+		return "FieldNameDTO [name=" + name + ", url=" + url + "]";
+	}
 	
 }

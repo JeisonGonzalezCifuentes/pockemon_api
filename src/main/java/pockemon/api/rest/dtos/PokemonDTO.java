@@ -2,27 +2,28 @@ package pockemon.api.rest.dtos;
 
 import java.util.List;
 
-import pockemon.api.rest.dtos.pocke.api.FieldNameDTO;
-
 public class PokemonDTO {
 
+	private final String URL_BASE_TO_DETAIL = "http://localhost:8080/pokemon/v1/%s/detail";
+	
 	private Integer id;
 	private String imageUrl;
+	private String detailUrl;
 	private String name;
 	private String weight;
 	
-	private List<FieldNameDTO> types;
-	private List<FieldNameDTO> abilities;
+	private List<String> types;
+	private List<String> abilities;
 	
 	public PokemonDTO() {
 		super();
 	}
 
-	public PokemonDTO(Integer id, String imageUrl, String name, String weight, List<FieldNameDTO> types,
-			List<FieldNameDTO> abilities) {
+	public PokemonDTO(Integer id, String imageUrl, String name, String weight, List<String> types, List<String> abilities) {
 		super();
 		this.id = id;
 		this.imageUrl = imageUrl;
+		this.detailUrl = String.format(URL_BASE_TO_DETAIL, id);
 		this.name = name;
 		this.weight = weight;
 		this.types = types;
@@ -33,48 +34,34 @@ public class PokemonDTO {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public String getImageUrl() {
 		return imageUrl;
 	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	
+	public String getDetailUrl() {
+		return detailUrl;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getWeight() {
 		return weight;
 	}
 
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
-
-	public List<FieldNameDTO> getTypes() {
+	public List<String> getTypes() {
 		return types;
 	}
 
-	public void setTypes(List<FieldNameDTO> types) {
-		this.types = types;
-	}
-
-	public List<FieldNameDTO> getAbilities() {
+	public List<String> getAbilities() {
 		return abilities;
 	}
 
-	public void setAbilities(List<FieldNameDTO> abilities) {
-		this.abilities = abilities;
+	@Override
+	public String toString() {
+		return "PokemonDTO [id=" + id + ", imageUrl=" + imageUrl + ", detailUrl=" + detailUrl + ", name=" + name
+				+ ", weight=" + weight + ", types=" + types + ", abilities=" + abilities + "]";
 	}
 	
 }

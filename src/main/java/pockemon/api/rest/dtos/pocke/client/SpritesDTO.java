@@ -1,4 +1,4 @@
-package pockemon.api.rest.dtos.pocke.api;
+package pockemon.api.rest.dtos.pocke.client;
 
 public class SpritesDTO {
 
@@ -33,6 +33,12 @@ public class SpritesDTO {
 
 	public String getFront_female() {
 		return front_female;
+	}
+
+	@Override
+	public String toString() {
+		return "SpritesDTO [back_default=" + back_default + ", back_female=" + back_female + ", front_default="
+				+ front_default + ", front_female=" + front_female + "]";
 	}
 	
 }

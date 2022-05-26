@@ -1,8 +1,8 @@
-package pockemon.api.rest.dtos.pocke.api;
+package pockemon.api.rest.dtos.pocke.client;
 
 import java.util.List;
 
-public class PokemonDetailDTO {
+public class PokeDetailClientDTO {
 	
 	private Integer id;
 	private String weight;
@@ -10,11 +10,11 @@ public class PokemonDetailDTO {
 	private List<AbilityDTO> abilities;
 	private List<TypeDTO> types;
 	
-	public PokemonDetailDTO() {
+	public PokeDetailClientDTO() {
 		super();
 	}
 	
-	public PokemonDetailDTO(Integer id, String weight, SpritesDTO sprites, List<AbilityDTO> abilities, List<TypeDTO> types) {
+	public PokeDetailClientDTO(Integer id, String weight, SpritesDTO sprites, List<AbilityDTO> abilities, List<TypeDTO> types) {
 		super();
 		this.weight = weight;
 		this.sprites = sprites;
@@ -40,6 +40,12 @@ public class PokemonDetailDTO {
 	
 	public List<TypeDTO> getTypes() {
 		return types;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "PokemonDetailDTO [id=" + id + ", weight=" + weight + ", sprites=" + sprites + ", abilities=" + abilities
+				+ ", types=" + types + "]";
+	}
 	
 }

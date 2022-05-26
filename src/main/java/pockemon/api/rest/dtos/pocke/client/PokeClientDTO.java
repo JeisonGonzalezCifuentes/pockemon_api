@@ -1,19 +1,19 @@
-package pockemon.api.rest.dtos.pocke.api;
+package pockemon.api.rest.dtos.pocke.client;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
-public class PokemonDTO {
+public class PokeClientDTO {
 
 	private String name;
 	
 	@JsonAlias("url")
 	private String urlDetail;
 	
-	public PokemonDTO() {
+	public PokeClientDTO() {
 		super();
 	}
 
-	public PokemonDTO(String name, String url) {
+	public PokeClientDTO(String name, String url) {
 		super();
 		this.name = name;
 		this.urlDetail = url;

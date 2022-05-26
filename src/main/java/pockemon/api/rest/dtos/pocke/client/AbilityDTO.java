@@ -1,4 +1,4 @@
-package pockemon.api.rest.dtos.pocke.api;
+package pockemon.api.rest.dtos.pocke.client;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
@@ -18,6 +18,11 @@ public class AbilityDTO {
 
 	public FieldNameDTO getAbilityName() {
 		return abilityName;
+	}
+
+	@Override
+	public String toString() {
+		return "AbilityDTO [abilityName=" + abilityName + "]";
 	}
 	
 }

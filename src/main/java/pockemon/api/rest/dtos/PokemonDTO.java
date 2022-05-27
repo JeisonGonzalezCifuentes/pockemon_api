@@ -7,7 +7,7 @@ import pockemon.api.rest.dtos.pocke.client.PokeDetailClientDTO;
 
 public class PokemonDTO {
 
-	private final String URL_BASE_TO_DETAIL = "http://localhost:8080/pokemon/v1/%s/detail";
+	private final String URL_BASE_TO_DETAIL = "https://json-pokemon-api.herokuapp.com/pokemon/v1/%s/detail";
 	
 	private Integer id;
 	private String imageUrl;

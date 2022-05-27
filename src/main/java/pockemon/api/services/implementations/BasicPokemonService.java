@@ -98,7 +98,7 @@ public class BasicPokemonService implements PokemonService {
 	}
 
 	private String buildUrlToGetAllPokemons(Optional<Integer> limitOptional, Optional<Integer> offsetOptional) {
-		final Integer limitValidated = limitOptional.orElse(2);
+		final Integer limitValidated = limitOptional.orElse(20);
 		final Integer offsetValidated = offsetOptional.orElse(0);
 
 		return String.format(URL_GET_ALL_POKEMONS, URL_BASE_ORIGIN, limitValidated, offsetValidated);

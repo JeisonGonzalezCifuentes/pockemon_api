@@ -19,10 +19,5 @@ public class AbilityDTO {
 	public FieldNameDTO getAbilityName() {
 		return abilityName;
 	}
-
-	@Override
-	public String toString() {
-		return "AbilityDTO [abilityName=" + abilityName + "]";
-	}
 	
 }

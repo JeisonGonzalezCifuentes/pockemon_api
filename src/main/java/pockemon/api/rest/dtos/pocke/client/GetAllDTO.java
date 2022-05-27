@@ -19,9 +19,4 @@ public class GetAllDTO {
 		return results;
 	}
 
-	@Override
-	public String toString() {
-		return "GetAllDTO [results=" + results + "]";
-	}
-
 }

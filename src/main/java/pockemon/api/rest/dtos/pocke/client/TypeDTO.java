@@ -19,10 +19,5 @@ public class TypeDTO {
 	public FieldNameDTO getTypeName() {
 		return typeName;
 	}
-
-	@Override
-	public String toString() {
-		return "TypeDTO [typeName=" + typeName + "]";
-	}
 	
 }

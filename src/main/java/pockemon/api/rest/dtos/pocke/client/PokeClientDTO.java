@@ -26,10 +26,5 @@ public class PokeClientDTO {
 	public String getUrlDetail() {
 		return urlDetail;
 	}
-
-	@Override
-	public String toString() {
-		return "PokemonDTO [name=" + name + ", urlDetail=" + urlDetail + "]";
-	}
 	
 }

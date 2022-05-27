@@ -1,10 +1,13 @@
 package pockemon.api.rest.dtos;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import pockemon.api.rest.dtos.pocke.client.PokeDetailClientDTO;
 
 public class PokemonDTO {
 
-	private final String URL_BASE_TO_DETAIL = "http://localhost:8080/pokemon/v1/%s/detail";
+	private final String URL_BASE_TO_DETAIL = "https://json-pokemon-api.herokuapp.com/pokemon/v1/%s/detail";
 	
 	private Integer id;
 	private String imageUrl;
@@ -28,6 +31,19 @@ public class PokemonDTO {
 		this.weight = weight;
 		this.types = types;
 		this.abilities = abilities;
+	}
+
+	public PokemonDTO(final PokeDetailClientDTO pokemonDetail) {
+		super();		
+		this.id = pokemonDetail.getId();
+		this.imageUrl = pokemonDetail.getSprites().getFront_default();
+		this.detailUrl = String.format(URL_BASE_TO_DETAIL, id);
+		this.name = pokemonDetail.getName();
+		this.weight = pokemonDetail.getWeight();
+		this.types = pokemonDetail.getAbilities().stream().map(ability -> ability.getAbilityName().getName())
+				.collect(Collectors.toList());
+		this.abilities = pokemonDetail.getTypes().stream().map(type -> type.getTypeName().getName())
+				.collect(Collectors.toList());
 	}
 
 	public Integer getId() {

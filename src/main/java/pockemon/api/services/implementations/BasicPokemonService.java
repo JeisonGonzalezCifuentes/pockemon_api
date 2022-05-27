@@ -55,11 +55,10 @@ public class BasicPokemonService implements PokemonService {
 	@Cacheable(value = "pokemon", key = "#pokemonId")
 	@Override
 	public Optional<PokemonDetailDTO> getPokemonDetail(int pokemonId) {
-		try {		
-			final PokeDetailClientDTO pokemonDetailClient = (PokeDetailClientDTO) 
-					pokeClientService.callService(PokeDetailClientDTO.class, buildUrlToGetPokemon(pokemonId))
-					.getBody();
-			
+		try {
+			final PokeDetailClientDTO pokemonDetailClient = (PokeDetailClientDTO) pokeClientService
+					.callService(PokeDetailClientDTO.class, buildUrlToGetPokemon(pokemonId)).getBody();
+
 			return Optional.of(getDetailWithDescriptionAndEvolution(pokemonDetailClient));
 		} catch (Exception exception) {
 			logger.error("Error getting pokemon", exception);
@@ -69,17 +68,18 @@ public class BasicPokemonService implements PokemonService {
 
 	private PokemonDetailDTO getDetailWithDescriptionAndEvolution(final PokeDetailClientDTO pokemonDetailClient) {
 		return Optional.of(pokemonDetailClient.getSpecies()).map(referenceToSpecie -> {
-			final SpecieDTO specie = (SpecieDTO) pokeClientService.callService(SpecieDTO.class, referenceToSpecie.getUrl()).getBody();
-			
+			final SpecieDTO specie = (SpecieDTO) pokeClientService
+					.callService(SpecieDTO.class, referenceToSpecie.getUrl()).getBody();
+
 			final EvolutionDTO evolutions = getEvolutions(specie.getEvolutionChain().getUrl());
-			return new PokemonDetailDTO(new PokemonDTO(pokemonDetailClient), specie.getDescription(), evolutions); 
+			return new PokemonDetailDTO(new PokemonDTO(pokemonDetailClient), specie.getDescription(), evolutions);
 		}).orElse(new PokemonDetailDTO(new PokemonDTO(pokemonDetailClient), null, null));
 	}
 
 	private EvolutionDTO getEvolutions(String urlEvolutions) {
-		final EvolutionChainDTO evolutionChain = (EvolutionChainDTO) 
-				pokeClientService.callService(EvolutionChainDTO.class, urlEvolutions).getBody();
-		
+		final EvolutionChainDTO evolutionChain = (EvolutionChainDTO) pokeClientService
+				.callService(EvolutionChainDTO.class, urlEvolutions).getBody();
+
 		logger.debug("Evolutions: " + evolutionChain);
 		return new EvolutionDTO(evolutionChain.getChain());
 	}
